@@ -27,7 +27,13 @@ with open(json_file) as json_file:
     for e in json_file:
         data = json.loads(e)
         url = data['host']
-        ip = data['ip']
+	try:
+            ip = data['ip']
+	except:
+	    KeyError
+	    ip = ''
+	    pass
+
         print('Vulnerability %s found on: %s' % (data['info']['name'], url))
         try:
             results =  data['extracted-results']
