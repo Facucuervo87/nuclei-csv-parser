@@ -87,7 +87,7 @@ with open(json_file) as json_file:
             'vulnerability_name': data['info']['name'],
             'host': url,
 	     	'endpoint': data['matched-at'],
-	     	'ip': data['ip'],
+	     	'ip': ip,
             'observation_title': data['info']['name'],
             'observation': description,
             'observation_note': '',
